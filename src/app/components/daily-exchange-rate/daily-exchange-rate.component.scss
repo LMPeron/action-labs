@@ -1,0 +1,37 @@
+mat-card {
+  background-color: white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+mat-icon {
+  padding-top: 7px;
+}
+
+.date {
+  color: #07b0fb;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.label {
+  color: #3f3f3f;
+  font-weight: 500;
+  font-size: 11px;
+  text-align: start;
+}
+
+.currency-value {
+  font-weight: 600;
+  color: #3f3f3f;
+  font-size: 16px;
+  text-align: end;
+}
+
+.up {
+  color: #69c669;
+}
+
+.down {
+  color: #e54e4e;
+}

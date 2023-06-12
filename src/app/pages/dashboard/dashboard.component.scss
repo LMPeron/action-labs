@@ -1,0 +1,127 @@
+@import "ngx-toastr/toastr";
+
+body {
+  font-family: "Roboto", normal;
+}
+
+.blue {
+  color: #07b0fb;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.form {
+  min-width: 150px;
+  width: 100%;
+}
+[nbButton] {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+mat-form-field {
+  width: 100%;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+::ng-deep {
+  .mdc-floating-label--float-above {
+    color: #07b0fb;
+  }
+  .mat-mdc-form-field-bottom-align {
+    display: none !important;
+  }
+  .mdc-line-ripple--active {
+    background-color: #07b0fb !important;
+    color: #07b0fb !important;
+  }
+  .mat-mdc-focus-indicator {
+    background-color: #07b0fb !important;
+    border-radius: 20px !important;
+  }
+  .mdc-button__label {
+    color: #ffffff !important;
+    font-weight: 500;
+  }
+  .mat-expansion-panel-content {
+    background-color: #f4f4f4;
+  }
+}
+
+input {
+  width: 100%;
+  padding-top: 10%;
+  padding-bottom: 5%;
+  font-size: larger !important;
+  align-self: center;
+  text-transform: uppercase !important;
+}
+
+button {
+  width: 100%;
+  padding-top: 6%;
+  padding-bottom: 6%;
+  border-radius: 20px;
+  background-color: #07b0fb;
+  font-size: larger !important;
+  align-self: center;
+  text-transform: uppercase !important;
+}
+
+mat-expansion-panel-header {
+  background-color: #f7fafc !important;
+  margin-bottom: 20px;
+}
+
+mat-panel-title {
+  color: #262626;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+mat-expansion-panel {
+  border-bottom: #07b0fb 2px solid;
+}
+
+mat-icon {
+  color: #07b0fb;
+}
+
+.exchange-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #262626;
+  display: block;
+}
+
+.last-update-current-date {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #333333;
+}
+
+.currency-symbol-label-holder {
+  align-self: center;
+  text-align: end;
+}
+
+.currency-symbol-label {
+  font-size: 24px;
+  color: #07b0fb;
+  text-align: end;
+  font-weight: 700;
+}
+
+.exchange-rate-holder {
+  background-color: rgba(7, 176, 256, 0.1);
+  margin: 0px 10px 0px 10px;
+  padding: 15px 0px 15px 0px;
+}
+
+.exchange-rate {
+  font-weight: 700;
+  font-size: 32px;
+  color: #07b0fb;
+  display: block;
+  text-align: center;
+}

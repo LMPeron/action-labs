@@ -1,0 +1,96 @@
+<div class="header pb-8 pt-3 pt-md-4">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row justify-content-center">
+        <span class="font-weight-700 text-uppercase h1 blue"
+          >BRL EXCHANGE RATE</span
+        >
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-6">
+          <form class="form">
+            <mat-form-field>
+              <mat-label>Enter the currency code</mat-label>
+              <input matInput [(ngModel)]="currencySymbolInput" />
+            </mat-form-field>
+          </form>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-6 mt-4">
+          <button mat-raised-button (click)="submitGetCurrentExchangeData()">
+            EXCHANGE RESULT
+          </button>
+        </div>
+      </div>
+      <hr />
+
+      <ngx-spinner
+        bdColor="rgba(51,51,51,0.8)"
+        size="medium"
+        type="ball-scale-multiple"
+      >
+        <p style="font-size: 20px; color: white">Loading...</p>
+      </ngx-spinner>
+
+      <div *ngIf="currentExchangeRate">
+        <div class="row">
+          <div class="col-lg-3 d-sm-none d-md-flex"></div>
+          <div class="col-6 col-lg-3">
+            <span class="exchange-label">Exchange rate now</span>
+            <span class="last-update-current-date">{{
+              currentExchangeRate.lastUpdatedAt
+            }}</span>
+          </div>
+          <div class="col-6 col-lg-3 currency-symbol-label-holder">
+            <span class="currency-symbol-label"
+              >{{ currentCurrencySymbol.toUpperCase() }}/BRL</span
+            >
+          </div>
+          <div class="col-lg-3 d-sm-none d-md-flex"></div>
+        </div>
+
+        <div class="row justify-content-center pl-lg-4 pr-lg-4 pl-2 pr-2 mt-4">
+          <div class="col-12 col-lg-6 exchange-rate-holder">
+            <span class="exchange-rate">{{
+              (currentExchangeRate.exchangeRate | currency : "BRL")
+                .replace(".", ",")
+                .replace("$", "$ ")
+            }}</span>
+          </div>
+        </div>
+
+        <div class="row justify-content-center pl-lg-4 pr-lg-4 pl-2 pr-2 mt-4">
+          <div class="col-12 col-lg-6 p-0">
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+              [hideToggle]="true"
+            >
+              <mat-expansion-panel-header
+                (click)="submitGetDailyExchangeData()"
+                class="p-0"
+              >
+                <mat-panel-title> LAST 30 DAYS </mat-panel-title>
+                <mat-panel-description class="justify-content-end m-0">
+                  <span *ngIf="!panelOpenState">
+                    <mat-icon>add</mat-icon>
+                  </span>
+
+                  <mat-icon *ngIf="panelOpenState">remove</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <div *ngFor="let dailyExchange of dailyExchangeRateList">
+                <ngx-daily-exchange-rate
+                  [dailyExchangeRate]="dailyExchange"
+                ></ngx-daily-exchange-rate>
+              </div>
+            </mat-expansion-panel>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

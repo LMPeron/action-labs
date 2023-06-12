@@ -1,0 +1,49 @@
+<mat-card>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-12 date">
+        {{ dailyExchangeRate.date | date : "dd/MM/yyyy" }}
+      </div>
+      <div class="col-6 mt-2">
+        <span class="label">OPEN:</span>
+        <span class="currency-value pl-2">
+          R$ {{ dailyExchangeRate.open | number : "1.4" }}</span
+        >
+      </div>
+      <div class="col-6 mt-2">
+        <span class="label">HIGH:</span>
+        <span class="currency-value pl-2">
+          R$ {{ dailyExchangeRate.high | number : "1.4" }}</span
+        >
+      </div>
+      <div class="col-6 mt-2">
+        <span class="label">CLOSE:</span>
+        <span class="currency-value pl-2">
+          R$ {{ dailyExchangeRate.close | number : "1.4" }}</span
+        >
+      </div>
+      <div class="col-6 mt-2">
+        <span class="label">LOW:</span>
+        <span class="currency-value pl-2">
+          R$ {{ dailyExchangeRate.low | number : "1.4" }}</span
+        >
+      </div>
+
+      <div class="col-12 mt-2">
+        <span class="label">CLOSE DIFF (%)</span>
+        <span
+          [class]="
+            isClosedDown ? 'down currency-value pl-2' : 'up currency-value pl-2'
+          "
+        >
+          <span class="mr-2"
+            ><span *ngIf="!isClosedDown">+</span
+            >{{ closeDiffPercentage | number : "1.2-2" }}%</span
+          >
+          <mat-icon *ngIf="!isClosedDown">keyboard_arrow_up</mat-icon>
+          <mat-icon *ngIf="isClosedDown">keyboard_arrow_down</mat-icon>
+        </span>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

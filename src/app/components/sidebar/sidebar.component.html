@@ -1,0 +1,66 @@
+<nav
+  class="navbar navbar-vertical navbar-expand-md navbar-light bg-white justify-content-center"
+  id="sidenav-main"
+>
+  <div>
+    <a
+      class="navbar-brand pt-0"
+      routerLinkActive="active"
+      [routerLink]="['/dashboard']"
+    >
+      <img
+        src="./assets/img/brand/red.png"
+        class="navbar-brand-img"
+        alt="..."
+      />
+    </a>
+
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+      <!-- Form -->
+      <form class="mt-4 mb-3 d-md-none">
+        <div class="input-group input-group-rounded input-group-merge">
+          <input
+            type="search"
+            class="form-control form-control-rounded form-control-prepended"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <span class="fa fa-search"></span>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- Navigation -->
+      <ul class="navbar-nav">
+        <li
+          *ngFor="let menuItem of menuItems"
+          class="{{ menuItem.class }} nav-item"
+        >
+          <a
+            routerLinkActive="active"
+            [routerLink]="[menuItem.path]"
+            class="nav-link"
+          >
+            <i class="ni {{ menuItem.icon }}"></i>
+            {{ menuItem.title }}
+          </a>
+        </li>
+      </ul>
+      <!-- Divider -->
+      <hr class="my-3" />
+      <!-- Heading -->
+      <h6 class="navbar-heading text-muted">CONTENT</h6>
+      <!-- Navigation -->
+      <ul class="navbar-nav mb-md-3">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.actionlabs.com.br/">
+            <i class="ni ni-spaceship"></i> Action Labs
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
