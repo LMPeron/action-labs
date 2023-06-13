@@ -25,9 +25,7 @@ export class DashboardComponent implements OnInit {
     private toastr: ToastrService
   ) {}
 
-  ngOnInit() {
-    this.toastr.success("Hello world!", "Toastr fun!");
-  }
+  ngOnInit() {}
 
   submitGetCurrentExchangeData() {
     try {
